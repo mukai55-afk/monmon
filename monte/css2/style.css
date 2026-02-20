@@ -1,0 +1,37 @@
+<style type="text/css">
+.button1 {
+  text-align: center;                  /* 水平方向は中央揃え */
+  line-height: 56px;                   /* 行の高さ */
+}
+.button1 span {
+  width: 200px;                        /* 横幅 */
+  height: 40px;                        /* 高さ */
+  display: inline-block;               /* 改行なしのブロック要素 */
+  position: relative;                  /* 相対位置指定 */
+  background-color: #fff;              /* Buttonボタンの色 */
+  color: #000066;;                     /* Buttonの文字の色 */
+  transition: transform 0.5s;          /* 回転時間 */
+  transform-origin: 50% 100%;          /* transformの起点 */
+  transform-style: preserve-3d;        /* 重なりを3Dで表示 */
+  border: 2px solid #000066;           /* 罫線 */
+}
+.button1 span::before {               /* "Click"の挿入 */
+  position: absolute;                  /* 親要素の左上を基準位置 */
+  top: -100%;                          /* 基準位置から上端までの距離 */
+  left: -1%;                           /* 基準位置から左端までの距離 */
+  width: 100%;                         /* 横幅 */
+  height: 100%;                        /* 高さ */
+  content: "monmontalk";                    /* 文字列の挿入 */
+  transition: background 1.0s;         /* ボタンの色の変化時間 */
+  transform: rotateX(90deg);           /* 横軸で90度回転 */
+  transform-origin: 50% 100%;          /* transformの起点 */
+  border: 2px solid #000066;;          /* 罫線 */
+}
+.button1:hover span {
+  transform: rotateX(-90deg);          /* 横軸で前方に90度回転 */
+}
+.button1:hover span::before{
+  background-color: #000066;;          /* Clickボタンの色 */
+  color: #fff;                         /* Clickの文字の色 */
+}
+</style>
