@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/*== L19ボタン共通設定 */
+.btn02 {
+    /*背景の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+    display: inline-block;
+    width:100%;
+    max-width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    outline: none;
+}
+
+/*L19ボタン内側の設定*/
+.btn02 span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
+    /* 重なりを3Dで表示 */
+    transform-style: preserve-3d;
+    /* アニメーションの設定 数字が少なくなるほど早く回転 */
+    transition: 0.5s;
+}
+
+/*== くるっと回転（奥に） */
+
+/* 回転前 */
+.rotateback span:nth-child(1) {
+    background: #fff;
+    color: #000;
+    transform: rotateX(0deg);/*はじめは回転なし*/
+    transform-origin: 0 50%  -25px;/* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(1) {
+    transform: rotateX(90deg);/* X軸に90度回転 */
+}
+
+/* 回転後 */
+.rotateback span:nth-child(2) {
+    background-color: #0000FF;
+    color: #fff;
+    transform: rotateX(-90deg);/*はじめはX軸に-90度回転*/
+    transform-origin: 0 50%  -25px;/* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(2) {
+    transform: rotateX(0deg);/* X軸に0度回転 */
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+body{
+    vertical-align:middle; 
+    padding: 100px 0;
+    text-align: center;
+}
+p{
+    margin: 0 0 10px 0;
+}
+
+/*========= newCSS ===============*/
+
+<style type="text/css">
+.btn {
+  display: inline-block;           /* 改行なしのブロック要素 */
+  position: relative;              /* 相対位置指定 */
+  width: 200px;                    /* 横幅 */
+  height: 60px;                    /* 高さ */
+  text-align: center;              /* 水平方向は中央揃え */
+  line-height: 56px;               /* 行の高さ */
+}
+.btn span {
+  display: block;                  /* ブロック要素 */
+  position: absolute;              /* 親要素の左上を基準位置 */
+  width: 100%;                     /* 横幅 */
+  height: 100%;                    /* 高さ */
+  border: 2px solid #333;          /* 罫線 */
+  transform-style: preserve-3d;    /* 重なりを3Dで表示 */
+  transition: 0.5s;   /* 変化時間 */
+}
+.btn span:nth-child(1) {
+  background-color: #ffffff;   /* Buttonボタンの色 */
+  color: #000000;          /* Buttonの文字の色 */
+  transform: rotateX(0deg);        /* 横軸の回転なし */
+  transform-origin: 0 50%  -30px;  /* transformの起点 */
+}
+.btn span:nth-child(2) {
+  background-color: #000000;   /* Clickボタンの色 */
+  color: #ffffff;          /* Clickの文字の色 */
+  transform: rotateX(90deg);       /* 横軸で90度回転 */
+  transform-origin: 0 50%  -30px;  /* transformの起点 */
+}
+.btn:hover span:nth-child(1) {
+  transform: rotateX(-90deg);      /* 横軸で前方に90度回転 */
+}
+.btn:hover span:nth-child(2) {
+  transform: rotateX(0deg);        /* 横軸の回転なし */
+}
+</style>
