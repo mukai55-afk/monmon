@@ -1,0 +1,187 @@
+:root {
+  color-scheme: dark;
+  --bg: #0000c6;
+  --panel: rgba(24, 31, 42, 0.82);
+  --panel-strong: rgba(35, 45, 61, 0.94);
+  --text: #f4f7fb;
+  --muted: #aeb8c8;
+  --line: rgba(255, 255, 255, 0.12);
+  --accent: #41d6c3;
+  --accent-2: #f7c948;
+  --shadow: rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Inter", "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background:
+    linear-gradient(145deg, rgba(65, 214, 195, 0.15), transparent 34%),
+    linear-gradient(315deg, rgba(247, 201, 72, 0.13), transparent 31%),
+    var(--bg);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 56px 0;
+}
+
+.lesson-hero {
+  margin-bottom: 34px;
+  padding: 12px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.45rem, 6vw, 5.7rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.lead {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.phrase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.phrase-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 18px 44px var(--shadow);
+}
+
+.phrase-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.phrase-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.jp {
+  font-size: 1.35rem;
+}
+
+.arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(65, 214, 195, 0.45);
+  border-radius: 50%;
+  color: var(--accent);
+  background: rgba(65, 214, 195, 0.08);
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+}
+
+.en {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.divider {
+  display: inline-block;
+  margin: 0 0.35em;
+  color: var(--accent-2);
+  font-size: 0.78em;
+  text-transform: uppercase;
+}
+
+.examples {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.35rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.examples li::marker {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 28px, 560px);
+    padding: 36px 0;
+  }
+
+  .lesson-hero {
+    margin-bottom: 22px;
+  }
+
+  .lead {
+    font-size: 0.98rem;
+  }
+
+  .phrase-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .phrase-card {
+    padding: 20px;
+  }
+
+  .phrase-heading {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .jp {
+    width: 100%;
+    font-size: 1.22rem;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .en {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+}
