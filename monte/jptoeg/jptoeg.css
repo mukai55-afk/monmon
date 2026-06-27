@@ -65,16 +65,20 @@ h1 {
   line-height: 1.75;
 }
 
-.back-button {
+.hero-actions {
   position: absolute;
   top: 18px;
   right: 0;
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.back-button,
+.pdf-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 132px;
-  min-height: 44px;
-  padding: 0 22px;
   border: 1px solid rgba(0, 124, 137, 0.28);
   border-radius: 999px;
   color: var(--text);
@@ -85,7 +89,21 @@ h1 {
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
-.back-button:hover {
+.back-button {
+  min-width: 132px;
+  min-height: 44px;
+  padding: 0 22px;
+}
+
+.pdf-button {
+  min-width: 104px;
+  min-height: 36px;
+  padding: 0 18px;
+  font-size: 0.9rem;
+}
+
+.back-button:hover,
+.pdf-button:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
   background: rgba(0, 124, 137, 0.08);
@@ -195,10 +213,15 @@ h1 {
     font-size: 0.98rem;
   }
 
-  .back-button {
+  .hero-actions {
     position: static;
-    width: 100%;
     margin-top: 22px;
+    justify-items: stretch;
+  }
+
+  .back-button,
+  .pdf-button {
+    width: 100%;
   }
 
   .phrase-grid {
